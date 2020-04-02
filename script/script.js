@@ -4,7 +4,7 @@ function getCSV() {
 
         // console.log(responseIn);
 
-        var outJSON = csvJSON(responseIn);
+        var outJSON = filePicked(responseIn);
 
         console.log(outJSON);
         // alert(responseIn);
