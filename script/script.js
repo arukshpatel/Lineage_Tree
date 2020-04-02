@@ -6,6 +6,6 @@ function getCSV() {
     }
     var request = new XMLHttpRequest();
     request.onload = printSys;
-    request.open('get', 'http://arukshpatel.com/Lineage_Tree/res/david_le.csv', true);
+    request.open('get', 'https://arukshpatel.com/Lineage_Tree/res/david_le.csv', true);
     request.send();
 }
