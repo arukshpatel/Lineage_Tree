@@ -5,15 +5,23 @@ function getCSV() {
         // console.log(responseIn);
 
         var outJSON = csvJSON(responseIn);
-        var parsed = JSON.parse(outJSON);
-        console.log(responseIn);
+
         console.log(outJSON);
-        console.log(parsed);
-        console.log("---------------------------------");
-        alert(
-            parsed[0].id + "\n" +
-            parsed[0].name
-        );
+
+        for(var i = 0; i < outJSON.length; i++)
+        {
+            console.log("NAME: " + outJSON[i].name);
+            console.log("LINE NUMBER: " + outJSON[i].id);
+            console.log("BIG ID: " + outJSON[i].big_id);
+            console.log("LITTLE ID: " + outJSON[i].little_id);
+
+            // if(outJSON[i].little_id == "0\r"){
+            //     console.log("LITTLE ID: 0");
+            // } else {
+            //     console.log("LITTLE ID: " + outJSON[i].little_id);
+            // }
+            console.log("–––––––––––––––––––––––––––––––––––––––––––––––––");
+        }
     }
     var request = new XMLHttpRequest();
     request.onload = printSys;
@@ -34,5 +42,7 @@ function csvJSON(csv) {
         result.push(obj);
     }
     //return result; //JavaScript object
-    return JSON.stringify(result); //JSON
+
+    return JSON.parse(JSON.stringify(result));
+    // return JSON.stringify(result); //JSON
 }
