@@ -6,9 +6,14 @@ function getCSV() {
 
         var outJSON = csvJSON(responseIn);
         var parsed = JSON.parse(outJSON);
-
-        console.log(parsed[0].big_id);
-        // alert(responseIn);
+        console.log(responseIn);
+        console.log(outJSON);
+        console.log(parsed);
+        console.log("---------------------------------");
+        alert(
+            parsed[0].id + "\n" +
+            parsed[0].name
+        );
     }
     var request = new XMLHttpRequest();
     request.onload = printSys;
