@@ -4,9 +4,10 @@ function getCSV() {
 
         // console.log(responseIn);
 
-        var outJSON = filePicked(responseIn);
+        var outJSON = csvJSON(responseIn);
+        var parsed = JSON.parse(outJSON);
 
-        console.log(outJSON);
+        console.log(parsed[0].big_id);
         // alert(responseIn);
     }
     var request = new XMLHttpRequest();
