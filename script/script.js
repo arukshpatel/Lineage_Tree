@@ -1,32 +1,19 @@
-function getCSV() {
+var json;
+
+
+function getCSV(lineage) {
+    var request = new XMLHttpRequest();
+    request.onload = printSys;
+    request.open('get', 'https://arukshpatel.com/Lineage_Tree/res/'+ lineage + '.csv', true);
+    request.send();
+
     function printSys() {
         var responseIn = this.responseText;
 
-        // console.log(responseIn);
+        json = csvJSON(responseIn);
 
-        var outJSON = csvJSON(responseIn);
-
-        console.log(outJSON);
-
-        for(var i = 0; i < outJSON.length; i++)
-        {
-            console.log("NAME: " + outJSON[i].name);
-            console.log("LINE NUMBER: " + outJSON[i].id);
-            console.log("BIG ID: " + outJSON[i].big_id);
-            console.log("LITTLE ID: " + outJSON[i].little_id);
-
-            // if(outJSON[i].little_id == "0\r"){
-            //     console.log("LITTLE ID: 0");
-            // } else {
-            //     console.log("LITTLE ID: " + outJSON[i].little_id);
-            // }
-            console.log("–––––––––––––––––––––––––––––––––––––––––––––––––");
-        }
+        document.getElementById('tree').innerHTML = json[0].id;
     }
-    var request = new XMLHttpRequest();
-    request.onload = printSys;
-    request.open('get', 'https://arukshpatel.com/Lineage_Tree/res/david_le.csv', true);
-    request.send();
 }
 
 function csvJSON(csv) {
@@ -41,8 +28,10 @@ function csvJSON(csv) {
         }
         result.push(obj);
     }
-    //return result; //JavaScript object
 
     return JSON.parse(JSON.stringify(result));
-    // return JSON.stringify(result); //JSON
+}
+
+function print() {
+    console.log(json);
 }
