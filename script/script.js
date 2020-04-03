@@ -1,4 +1,21 @@
 var json;
+class Member {
+    constructor(name, lineNum, bigLineNum) {
+        this._name = name;
+        this._lineNum = lineNum;
+        this._bigLineNum = bigLineNum;
+    }
+
+    get mName() {
+        return this._name;
+    }
+
+    set mName(x) {
+        this._name = x;
+    }
+
+}
+
 
 var member = {
     name: null,
@@ -18,19 +35,18 @@ var member = {
 
 function getCSV(lineage) {
     var request = new XMLHttpRequest();
-    request.onload = printSys;
+    request.onload = responseHandler;
     request.open('get', 'https://arukshpatel.com/Lineage_Tree/res/' + lineage + '.csv', true);
     request.send();
     createArray();
 
-    function printSys() {
+    function responseHandler() {
         var responseIn = this.responseText;
         json = csvJSON(responseIn);
-        document.getElementById('tree').innerHTML = json[0].id;
     }
 
     function csvJSON(csv) {
-        var lines = csv.split("\n");
+        var lines = csv.split("\r");
         var result = [];
         var headers = lines[0].split(",");
         for (var i = 1; i < lines.length; i++) {
@@ -41,15 +57,28 @@ function getCSV(lineage) {
             }
             result.push(obj);
         }
-
+        console.log(JSON.stringify(result));
         return JSON.parse(JSON.stringify(result));
     }
 }
 
 function createArray() {
-
+    
+    for(i = 0; i < length; i++)
+    {
+        var mem = json[i];
+        member.construct(mem.name, mem.id, mem.big_id);
+    }
 }
 
 function print() {
-    console.log(json);
+
+    // var length = json.length;
+    
+    // for(i = 0; i < length; i++)
+    // {
+    //     console.log(json[i]);
+    // }
+
+    console.log(member['name']);
 }
