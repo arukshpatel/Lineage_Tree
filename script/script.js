@@ -1,12 +1,17 @@
 var json;
 
 var member = {
-    name,
-    lineNum,
-    bigLineNum,
+    name: null,
+    lineNum: null,
+    bigLineNum: null,
     children : [],
     addChildren : function(littleLineNum) {
         this.children.push(littleLineNum);
+    },
+    construct : function(name, lineNum, bigLineNum) {
+        this.name = name;
+        this.lineNum = lineNum;
+        this.bigLineNum = bigLineNum;
     }
 
 };
