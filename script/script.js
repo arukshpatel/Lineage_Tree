@@ -1,37 +1,6 @@
+
 var json;
-class Member {
-    constructor(name, lineNum, bigLineNum) {
-        this._name = name;
-        this._lineNum = lineNum;
-        this._bigLineNum = bigLineNum;
-    }
 
-    get mName() {
-        return this._name;
-    }
-
-    set mName(x) {
-        this._name = x;
-    }
-
-}
-
-
-var member = {
-    name: null,
-    lineNum: null,
-    bigLineNum: null,
-    children : [],
-    addChildren : function(littleLineNum) {
-        this.children.push(littleLineNum);
-    },
-    construct : function(name, lineNum, bigLineNum) {
-        this.name = name;
-        this.lineNum = lineNum;
-        this.bigLineNum = bigLineNum;
-    }
-
-};
 
 function getCSV(lineage) {
     var request = new XMLHttpRequest();
@@ -71,7 +40,7 @@ function createArray() {
     }
 }
 
-function print() {
+function log() {
 
     // var length = json.length;
     
