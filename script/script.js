@@ -12,6 +12,7 @@ function getCSV(lineage) {
     function responseHandler() {
         var responseIn = this.responseText;
         json = csvJSON(responseIn);
+        console.log(json);
     }
 
     function csvJSON(csv) {
@@ -26,7 +27,6 @@ function getCSV(lineage) {
             }
             result.push(obj);
         }
-        console.log(JSON.stringify(result));
         return JSON.parse(JSON.stringify(result));
     }
 }
