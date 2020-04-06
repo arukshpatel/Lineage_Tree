@@ -1,18 +1,18 @@
-﻿id,name,big_id,
-4,David Le,null,
-30,Jonathan Nguyen,4,
-48,Charlie Nguyen,30,
-56,Binh Nguyen,48,
-65,Luke Nguyen,56,
-75,Bao Nguyen,65,
-81,Danny Slief,75,
-97,Joe Khong,81,
-116,Tommy Ngo,97,
-136,Huan Nguyen,116,
-152,Peter Trinh,136,
-158,Allen Pau,152,
-169,Tin Nguyen,158,
-176,Duong Lam,169,
-120,Steven Tu,97,
-129,Wayne Lin,120,
-171,Aruksh Patel,129,
+id,name,big_id
+4,David Le,null
+30,Jonathan Nguyen,4
+48,Charlie Nguyen,30
+56,Binh Nguyen,48
+65,Luke Nguyen,56
+75,Bao Nguyen,65
+81,Danny Slief,75
+97,Joe Khong,81
+116,Tommy Ngo,97
+136,Huan Nguyen,116
+152,Peter Trinh,136
+158,Allen Pau,152
+169,Tin Nguyen,158
+176,Duong Lam,169
+120,Steven Tu,97
+129,Wayne Lin,120
+171,Aruksh Patel,129
