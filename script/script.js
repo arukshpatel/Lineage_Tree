@@ -1,5 +1,5 @@
 
-var json;
+var json = getCSV('david_le');
 
 
 function getCSV(lineage) {
@@ -12,7 +12,6 @@ function getCSV(lineage) {
     function responseHandler() {
         var responseIn = this.responseText;
         json = csvJSON(responseIn);
-        console.log(json);
     }
 
     function csvJSON(csv) {
@@ -49,5 +48,5 @@ function log() {
     //     console.log(json[i]);
     // }
 
-    console.log(member['name']);
+    console.log(json);
 }
