@@ -47,7 +47,7 @@
         // set the dimensions and margins of the diagram
 
         // set the dimensions and margins of the diagram
-        var margin = { top: 20, right: 90, bottom: 30, left: 90 },
+        var margin = { top: 40, right: 90, bottom: 50, left: 90 },
             width = 660 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
@@ -56,8 +56,8 @@
             .size([height, width]);
 
         // load the external data
-        d3.csv("https://gist.githubusercontent.com/d3noob/2b0f9f9c868e23bf313f6f0137f3ef55/raw/2daec52d9fbb3cb785fa4d6b62f8067a11c2a9c3/treeCsv.csv").then(function (flatData) {
-        // d3.csv("https://arukshpatel.com/Lineage_Tree/res/david_le.csv").then(function (flatData) {
+        // d3.csv("https://gist.githubusercontent.com/d3noob/2b0f9f9c868e23bf313f6f0137f3ef55/raw/2daec52d9fbb3cb785fa4d6b62f8067a11c2a9c3/treeCsv.csv").then(function (flatData) {
+        d3.csv("https://arukshpatel.com/Lineage_Tree/res/david_le_2.csv").then(function (flatData) {
             console.log(flatData);
             // assign null correctly
             flatData.forEach(function (d) {
