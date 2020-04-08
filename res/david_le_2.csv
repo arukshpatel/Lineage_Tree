@@ -1,0 +1,18 @@
+name,parent
+David Le,null
+Jonathan Nguyen,David Le
+Charlie Nguyen,Jonathan Nguyen
+Binh Nguyen,Charlie Nguyen
+Luke Nguyen,Binh Nguyen
+Bao Nguyen,Luke Nguyen
+Danny Slief,Bao Nguyen
+Joe Khong,Danny Slief
+Tommy Ngo,Joe Khong
+Huan Nguyen,Tommy Ngo
+Peter Trinh,Huan Nguyen
+Allen Pau,Peter Trinh
+Tin Nguyen,Allen Pau
+Duong Lam,Tin Nguyen
+Steven Tu,Joe Khong
+Wayne Lin,Steven Tu
+Aruksh Patel,Wayne Lin
