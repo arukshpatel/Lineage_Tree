@@ -28,18 +28,23 @@
 </head>
 
 <body>
-    <script>
-        var csvResponse;
-
+    <!-- <script>
+        var responseIn;
+        function responseHandler() {
+            responseIn = this.responseText;
+            console.log(responseIn);
+        }
         var request = new XMLHttpRequest();
-        request.onload = csvResponse;
-        request.open('get', 'https://arukshpatel.com/Lineage_Tree/res/david_le_2.csv', true);
+        request.onload = responseHandler;
+        request.open('get', 'https://arukshpatel.com/Lineage_Tree/res/david_le.csv', true);
         request.send();
-    </script>
+    </script> -->
     <!-- load the d3.js library -->
-    <script src="https://d3js.org/d3.v4.min.js">console.log(src)</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
     <script>
+
+        // set the dimensions and margins of the diagram
 
         // set the dimensions and margins of the diagram
         var margin = { top: 20, right: 90, bottom: 30, left: 90 },
@@ -51,8 +56,9 @@
             .size([height, width]);
 
         // load the external data
-        d3.csv("./res/david_le_2.csv", function (error, flatData) {
-            if (error) throw error;
+        d3.csv("https://gist.githubusercontent.com/d3noob/2b0f9f9c868e23bf313f6f0137f3ef55/raw/2daec52d9fbb3cb785fa4d6b62f8067a11c2a9c3/treeCsv.csv").then(function (flatData) {
+        // d3.csv("https://arukshpatel.com/Lineage_Tree/res/david_le.csv").then(function (flatData) {
+            console.log(flatData);
             // assign null correctly
             flatData.forEach(function (d) {
                 if (d.parent == "null") { d.parent = null };
@@ -125,6 +131,7 @@
                 .text(function (d) { return d.data.name; });
 
         });
+
 
     </script>
 </body>
